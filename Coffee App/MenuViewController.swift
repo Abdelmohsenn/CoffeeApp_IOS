@@ -2,9 +2,9 @@
 //  MenuViewController.swift
 //  Coffee App
 //
-//  Created by muhammad abdelmohsen on 9/11/22.
+//  
 //
-
+import Foundation
 import UIKit
 
 class MenuViewController: UIViewController {
@@ -20,14 +20,30 @@ class MenuViewController: UIViewController {
     }
     
     private func getData(){
-        menuData.append(.init(image: "Espresso", title: "Espresso" , price: 40))
-        menuData.append(.init(image: "Cappuccino", title: "Cappuccino", price: 40))
-        menuData.append(.init(image: "Latte", title: "Latte", price: 40))
-        menuData.append(.init(image: "Macchiato", title: "Macchiato", price: 40))
-        menuData.append(.init(image: "Mocha", title: "Mocha", price: 40))
-
-
-
+        menuData.append(.init("Espresso", "Espresso" , "small" , 0, 0))
+//        menuData.append(.init("Espresso", "Espresso" , "medium" , 0))
+//        menuData.append(.init("Espresso", "Espresso" , "large" , 0))
+        
+        
+        menuData.append(.init("Cappuccino", "Cappuccino", "small" , 0, 0))
+//        menuData.append(.init("Cappuccino", "Cappuccino", "medium" , 0))
+//        menuData.append(.init("Cappuccino", "Cappuccino", "large" , 0))
+        
+        
+        menuData.append(.init("Latte", "Latte", "small" , 0, 0))
+//        menuData.append(.init("Latte", "Latte", "medium" , 0))
+//        menuData.append(.init("Latte", "Latte", "large" , 0))
+        
+        
+        menuData.append(.init("Macchiato", "Macchiato", "small" , 0, 0))
+//        menuData.append(.init("Macchiato", "Macchiato", "medium" , 0))
+//        menuData.append(.init("Macchiato", "Macchiato", "large" , 0))
+        
+        
+        menuData.append(.init("Mocha", "Mocha", "small" , 0, 0))
+//        menuData.append(.init("Mocha", "Mocha", "medium" , 0))
+//        menuData.append(.init("Mocha", "Mocha", "large" , 0))
+        
 
     }
 }
@@ -53,8 +69,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func NavigateToCart (data : MenuModel){
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = Storyboard.instantiateViewController(withIdentifier: "UIcartViewController") as! UIcartViewController
+        viewController.Object = data
         self.present(viewController, animated: false, completion: nil)
     }
+    
+    
+    
+    
 }
 
 

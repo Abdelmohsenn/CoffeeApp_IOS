@@ -2,9 +2,9 @@
 //  MenuTableViewCell.swift
 //  Coffee App
 //
-//  Created by muhammad abdelmohsen on 9/11/22.
 //
-
+//
+import Foundation
 import UIKit
 
 class MenuTableViewCell: UITableViewCell {
